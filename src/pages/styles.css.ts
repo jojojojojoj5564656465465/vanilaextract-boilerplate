@@ -37,7 +37,7 @@ export const testDouble = style({
 
 export const cc = style(
   {
-    backgroundColor: "pink",
+    backgroundColor: "orangered",
     color: "blueviolet",
     fontFamily: theme.fontFamily.Kalorama.Outline,
     fontStyle: "normal",
