@@ -38,7 +38,7 @@ export const testDouble = style({
 export const cc = style(
   {
     backgroundColor: "orangered",
-    color: "blueviolet",
+    color: "violet",
     fontFamily: theme.fontFamily.Kalorama.Outline,
     fontStyle: "normal",
     fontSize: "3.5rem",
