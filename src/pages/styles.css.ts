@@ -30,18 +30,18 @@ export const bb = style({
 });
 export const testDouble = style({
   color: "green",
-  fontSize: "4.5rem",
+  fontSize:theme.fontSize.md,
   fontFamily:theme.fontFamily.Kalorama.Outline
 });
 
 
 export const cc = style(
   {
-    backgroundColor: "orangered",
+    backgroundColor: "black",
     color: "violet",
     fontFamily: theme.fontFamily.Kalorama.Outline,
     fontStyle: "normal",
-    fontSize: "3.5rem",
+    fontSize: theme.fontSize.md,
     ...hoverfn({
       fontStyle: "italic",
       backgroundColor: "green",
