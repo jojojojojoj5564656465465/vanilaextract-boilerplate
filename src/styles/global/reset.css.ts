@@ -1,35 +1,35 @@
 /*
-  Josh's Custom CSS Reset
-  https://www.joshwcomeau.com/css/custom-css-reset/
+MUST IMPORT reset.css.ts in layout.astro
 */
 
-import { globalStyle } from "@vanilla-extract/css";
-import { theme } from "../tokens/theme.css";
-//import "../styles/global/globalStyle.css";    // importer les globals
-globalStyle("*, *::before, *::after", {
-  boxSizing: "border-box",
-});
+import { globalStyle } from '@vanilla-extract/css'
 
-globalStyle("*", {
+globalStyle('*, *::before, *::after', {
+  boxSizing: 'border-box'
+})
+
+globalStyle('*', {
   margin: 0,
-});
+  maxWidth: '100dvw',
+  boxSizing: 'border-box'
+})
 
-globalStyle("html, body", {
-  blockSize: "100%",
-});
+globalStyle('html, body', {
+  blockSize: '100%',
+  overflowInline: 'hidden',
+  boxSizing: 'border-box'
+})
 
-globalStyle("body", {
+globalStyle('body', {
   lineHeight: 1.5,
-  WebkitFontSmoothing: "antialiased",
-});
+  WebkitFontSmoothing: 'antialiased'
+})
 
-globalStyle("img, picture, video, canvas, svg", {
-  display: "block",
-  maxInlineSize: "100%",
-});
+globalStyle('img, picture, video, canvas, svg', {
+  display: 'block',
+  maxInlineSize: '100%'
+})
 
-globalStyle("input, button, textarea, select", {
-  font: "inherit",
-});
-
-
+globalStyle('input, button, textarea, select', {
+  font: 'inherit'
+})

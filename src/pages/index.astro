@@ -1,15 +1,12 @@
 ---
-import { cc  } from "./styles.css";
+import Welcome from '../components/Welcome.astro';
+import A from '../components/A/A.astro';
+import Layout from '../layouts/Layout.astro';
+
+// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
+// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
-<main>
-  <div>
-    <button class={cc}>click here</button>
-    <p class={cc}>hello pp</p>
-    <p class={cc}>
-      pour utiliser vanilla il faut utiliser le theme contract et non la
-      variable src/styles/tokens/theme.css.ts
-    </p>
-    <h6>je suis h6 avec css global</h6>
-  </div>
-</main>
+<Layout>
+	<A />
+</Layout>

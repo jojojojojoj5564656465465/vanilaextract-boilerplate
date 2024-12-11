@@ -2,52 +2,48 @@ import {
   assignVars,
   createGlobalTheme,
   globalStyle,
-} from "@vanilla-extract/css";
+} from '@vanilla-extract/css'
+import FontSizeGenerator from '../tokens/font/FontSizeGenerator'
 
-import { theme } from "../tokens/theme.css";
-import  tokens from "../tokens";
-//import "src/styles/tokens/font/index.ts";
+const font = new FontSizeGenerator(380, 2100, 16)
+import {theme}  from '@theme'
+import tokens from 'src/styles/tokens/index.ts'
+import { light, dark } from 'src/styles/tokens/color/colors.ts'
 
-export const media = {
-  sm: "screen and (min-width: 640px)",
-  md: "screen and (min-width: 768px)",
-  lg: "screen and (min-width: 1024px)",
-  xl: "screen and (min-width: 1280px)",
-  "2xl": "screen and (min-width: 1536px)",
-  motionSafe: "(prefers-reduced-motion: no-preference)",
-  retina: "(-webkit-min-device-pixel-ratio: 2),(min-resolution: 192dpi)",
-};
-export const vars = createGlobalTheme(":root, ::backdrop", theme, {
-  test: "yellow",
-  fontSize: tokens.fontSizes,
-  color: tokens.colors,
-  fontFamily: tokens.fontFamilies,
-  size: tokens.sizes,
-  space: tokens.spaces,
-  radius: tokens.radii,
-});
+import 'src/styles/tokens/font/index.ts'
 
-globalStyle(":root", {
-   "@media": {
-    "screen and (min-width: 1024px)": {
+import { optimalFontSizePerTag } from '@styles/tokens/font/index.ts'
+
+
+
+globalStyle(':root , ::backdrop', {
+  '@media': {
+    screen: {
       vars: assignVars(theme, {
-        test: "green",
         fontSize: tokens.fontSizes,
-        color: tokens.colors,
+        color: light,
         fontFamily: tokens.fontFamilies,
         size: tokens.sizes,
         space: tokens.spaces,
         radius: tokens.radii,
       }),
     },
+    '(prefers-color-scheme: dark)': {
+      vars: assignVars(theme.color, {
+        ...dark,
+      }),
+    },
   },
-});
+})
 
-
-globalStyle("html, body *", {
-
-  boxSizing: "border-box",
-});
+for (const [property, value] of Object.entries(optimalFontSizePerTag)) {
+  globalStyle(property, {
+    fontSize: font.clamp(value, value * 1.3),
+  })
+}
+globalStyle('html, body *', {
+  boxSizing: 'border-box',
+})
 
 // globalStyle("img, svg", {
 //   verticalAlign: "middle",
@@ -65,70 +61,52 @@ globalStyle('*', {
   boxSizing: 'border-box',
   margin: 0,
   // border: '1px solid salmon',
-});
+})
 
 globalStyle('html', {
   scrollBehavior: 'smooth',
-});
+})
 
 globalStyle('html, body', {
   height: '100%',
-});
+})
 
 globalStyle('body', {
   lineHeight: 1.5,
   WebkitFontSmoothing: 'antialiased',
-});
+})
 
 globalStyle('img, picture, video, canvas, svg', {
   display: 'block',
   maxWidth: '100%',
-});
+})
 
 globalStyle('img', {
   objectFit: 'cover',
-});
+})
 
 globalStyle('input, button, textarea, select', {
   font: 'inherit',
-});
+})
 
 globalStyle('p, h1, h2, h3, h4, h5', {
   overflowWrap: 'break-word',
-});
-globalStyle("h6", {
-  color: "green",
-  backgroundColor:"yellow",
-});
+})
+
 globalStyle('#root', {
   isolation: 'isolate',
-});
+})
 
-// Other globals
-globalStyle('html, body, #root, #app', {
-  minWidth: '100vw',
-  minHeight: '100vh',
-});
+// globalStyle('h1, h2, h3, h4, h5, h5', {
+//   fontFamily: theme.fontFamily.Signathing
+// })
 
-globalStyle("#app", {
-  fontFamily: theme.fontFamily.Signathing,
-  background: theme.color.brand.secondary,
-  color: theme.color.brand.primary,
-});
-
-globalStyle('h1, h2, h3, h4, h5, h5', {
-  fontFamily: theme.fontFamily.Signathing,
-});
-
-globalStyle("a", {
-  color: theme.color.palette.black,
-  textDecoration: "none",
-});
+globalStyle('a', {
+  textDecoration: 'none',
+})
 
 globalStyle('a:hover', {
   textDecoration: 'underline',
-});
+})
 
-globalStyle('a:visited', {
-  color: theme.color.palette.black,
-});
+

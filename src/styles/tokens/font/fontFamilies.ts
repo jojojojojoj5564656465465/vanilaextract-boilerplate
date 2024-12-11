@@ -1,10 +1,6 @@
-const fontFamilies = {
-  primary: "'Roboto', 'Noto Sans JP Variable', sans-serif",
-  Kalorama: {
-    Script: "KaloramaScript",
-    Outline: "KaloramaOutline",
-  },
-  Signathing: "Signathing",
+export const fontFamilies = {
+	nunito: "'Nunito', serif",
+	exo: "'exo', sans-serif",
+	LibreFranklin: "'LibreFranklin', sans-serif",
+	dancingScript: "'dancing', sans-serif",
 } as const;
-
-export default fontFamilies;

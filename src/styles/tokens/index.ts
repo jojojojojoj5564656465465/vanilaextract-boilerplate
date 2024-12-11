@@ -1,16 +1,18 @@
-import { colors } from "./color/colors";
-import fontFamilies  from "./font/fontFamilies";
-import fontSizes from "./font/fontSizes";
-import { radii } from "./size/radii";
-import { sizes } from "./size/sizes";
-import { spaces } from "./size/spaces";
+//import { colors } from '@/styles/tokens/color/colorOKLCH.css.ts'
+import { fontSizes, fontFamilies } from './font/index.ts'
 
+import { spaces, radii, sizes } from './size/index.ts'
+
+/**
+ * 
+ * ! This file is auto generated !
+ */
 const tokens = {
-  colors,
+ // colors,  
   fontSizes,
   fontFamilies,
   sizes,
   spaces,
-  radii,
-};
-export default tokens;
+  radii
+}
+export default tokens

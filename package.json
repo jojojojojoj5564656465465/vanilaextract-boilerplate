@@ -1,22 +1,37 @@
 {
-  "name": "boilerplate-vanilla",
+  "name": "7dec",
   "type": "module",
   "version": "0.0.1",
   "scripts": {
     "dev": "astro dev",
-    "start": "astro dev",
-    "build": "astro check && astro build",
+    "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "lint": "bunx biome lint --write --unsafe ./src ; bunx biome format --write ./src"
   },
   "dependencies": {
-    "@astrojs/check": "^0.5.10",
-    "@vanilla-extract/css": "^1.14.2",
-    "@vanilla-extract/recipes": "^0.5.2",
-    "astro": "^4.5.12",
-    "typescript": "^5.4.3"
+    "@astrojs/check": "^0.9.4",
+    "@vanilla-extract/css": "^1.16.1",
+    "astro": "^4.16.17",
+    "bun-types": "^1.1.38",
+    "@builder.io/qwik": "^1.11.0",
+    "@qwikdev/astro": "^0.6.3",
+    "astro-icon": "^1.1.4",
+    "astro-robots-txt": "^1.0.0",
+    "lightningcss": "^1.28.2",
+    "valibot": "^0.42.1"
   },
   "devDependencies": {
-    "@vanilla-extract/vite-plugin": "^4.0.7"
+    "@vanilla-extract/vite-plugin": "^4.0.18",
+    "biome": "^0.3.3",
+    "@typescript-eslint/parser": "^7.18.0",
+    "@unocss/preset-wind": "^0.65.1",
+    "@unocss/reset": "^0.65.1",
+    "eslint": "^9.16.0",
+    "eslint-plugin-astro": "^1.3.1",
+    "preset-wind-plus": "^2.1.9",
+    "prettier": "^3.4.2",
+    "prettier-plugin-astro": "^0.13.0",
+    "unocss": "^0.65.1"
   }
 }
